@@ -1,0 +1,67 @@
+==================================================
+Assignment No: 3
+Aim: Single Inheritance Demonstration
+Problem Statement: Create a Java program demonstrating single inheritance
+where a subclass extends a superclass and calls its methods.
+==================================================
+
+class Student
+{
+    int rolln, mks;
+    String name;
+
+    Student()
+    {
+        System.out.println("You are in Default Constructor of Student");
+        rolln = 10;
+        name = new String("ABCD");
+        mks = 50;
+    }
+
+    Student(int x, int y, String n)
+    {
+        System.out.println("You are in Parametric Constructor of Student");
+        rolln = x;
+        name = n;
+        mks = y;
+    }
+}
+
+class EnggStudent extends Student
+{
+    String branch, clg;
+
+    EnggStudent()
+    {
+        System.out.println("You are in Default Constructor of EnggStudent");
+        branch = "Computer";
+        clg = "AAA College of Engg.";
+    }
+
+    EnggStudent(int x, int y, String n, String a, String b)
+    {
+        super(x, y, n);
+        System.out.println("You are in Parametric Constructor of EnggStudent");
+        branch = a;
+        clg = b;
+    }
+
+    void display()
+    {
+        System.out.println("You are in Display Function ");
+        System.out.println("Student Id==>" + rolln);
+        System.out.println("Student Marks==>" + mks);
+        System.out.println("Student Name==>" + name);
+        System.out.println("Student College==>" + clg);
+        System.out.println("Student Branch==>" + branch);
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("Hello World!");
+        EnggStudent e = new EnggStudent();
+        e.display();
+        EnggStudent e1 = new EnggStudent(21, 90, "PQR", "Mechanical", "DS Collegee Of Engg");
+        e1.display();
+    }
+}
